@@ -15,7 +15,7 @@ public class Medidas {
         String opcao = "";
         int area = 0;   // recebe o resultado dos cálculos de áreas
 
-        while (!opcao.toUpperCase().equals("S")){
+        //while (!opcao.toUpperCase().equals("S")){
             System.out.println("Escolha o Calculo Desejado");
             System.out.println("(1) - Area do Quadrado");
             System.out.println("(2) - Area do Retangulo");
@@ -24,6 +24,7 @@ public class Medidas {
             System.out.println("(5) - Tabuada");
             System.out.println("(6) - Fibonacci");
             System.out.println("(7) - Contagem Regressiva");
+            System.out.println("(8) - Divisão por Zero");
             System.out.println("(S) - Sair");
 
             opcao = entrada.nextLine(); // leitura da opção
@@ -43,6 +44,9 @@ public class Medidas {
                 case "7":
                     contagemRegressiva();
                     break;
+                case "8":
+                    divisaoPorZero();
+                    break;
                 case "S":
                 case "s":
                     System.out.println("Agradecemos pela preferência! Fui!!");
@@ -53,7 +57,7 @@ public class Medidas {
             if (area > 0) {
                 System.out.println("A área é de " + area + "m²");
             }
-        }
+        //}
 
     }
     public static int calcularAreaDoQuadrado(){
@@ -115,6 +119,23 @@ public class Medidas {
 
         for(int i = numero; i >= 1; i-= decrescimo){
             System.out.print(i + " ");
+        }
+    }
+    public static void divisaoPorZero(){
+        try {
+            System.out.print("Qual é o dividendo? (numero a ser dividido) ");
+            //float dividendo = entrada.nextInt();                  //float = números fracionados
+            byte dividendo = entrada.nextByte();
+            System.out.print("Qual é o divisor? (numero que divide o dividendo) ");
+            //float divisor = entrada.nextInt();
+            byte divisor = entrada.nextByte();
+            System.out.println("O Resultado é: " + dividendo / divisor);
+        }
+        catch(Exception e){
+                System.out.println("Mensagem temporária em Iglês: " + e.getMessage());
+        }
+        finally {
+            System.out.println("Por hoje é só pessoal!!");
         }
     }
 }
